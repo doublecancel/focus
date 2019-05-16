@@ -1,0 +1,49 @@
+# 配置文件的版本
+version: '2'
+services:
+  eureka:
+    container_name: eureka
+    ports:
+      - "10000:10000"
+    image: basic/eureka
+
+  gateway:
+    container_name: gateway
+    ports:
+      - "10005:10005"
+    image: basic/gateway
+    depends_on:
+      - eureka
+    links:
+      - eureka
+
+  config:
+    container_name: config
+    ports:
+    - "10003:10003"
+    #      依赖的镜像
+    image: basic/config
+    depends_on:
+      - eureka
+    links:
+      - eureka
+  admin:
+    container_name: admin
+    ports:
+      - "10002:10002"
+    #      依赖的镜像
+    image: basic/admin-server
+    depends_on:
+      - eureka
+    links:
+      - eureka
+  zipkin:
+    container_name: zipkin
+    ports:
+      - "10004:10004"
+    #      依赖的镜像
+    image: basic/zipkin-server
+    depends_on:
+      - eureka
+    links:
+      - eureka

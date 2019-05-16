@@ -1,0 +1,41 @@
+server:
+  port: 10005
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@eureka:10000/eureka/
+    fetch-registry: true
+    registry-fetch-interval-seconds: 5
+
+spring:
+  application:
+    name: Gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+      - id: system
+        uri: lb://system
+        predicates:
+        - Path= /system/**
+        filters:
+        - StripPrefix=1
+
+management:
+  health:
+    redis:
+      enabled: false #不监控redis，监控状态下总是显示down的状态
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有节点
+    health:
+      sensitive: false #关闭过滤敏感信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #显示详细信息

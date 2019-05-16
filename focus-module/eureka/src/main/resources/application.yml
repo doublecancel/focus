@@ -1,0 +1,43 @@
+server:
+  port: 10000
+  address: eureka
+spring:
+  application:
+    name: EurekaServer
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: admin123
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:admin123@eureka:10000/eureka/
+    fetch-registry: false
+  #    registry-fetch-interval-seconds: 30
+  instance:
+    non-secure-port-enabled: false
+    hostname: 127.0.0.1
+    lease-expiration-duration-in-seconds: 90
+    lease-renewal-interval-in-seconds: 30
+  #    status-page-url-path: /actuator/info
+  #    health-check-url-path: /actuator/health
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 60000
+
+management:
+  health:
+    redis:
+      enabled: false #不监控redis，监控状态下总是显示down的状态
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有节点
+    health:
+      sensitive: false #关闭过滤敏感信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #显示详细信息

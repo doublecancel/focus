@@ -1,0 +1,39 @@
+
+server:
+  port: 10004
+spring:
+  application:
+    name: ZipkinServer
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@eureka:10000/eureka/
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+  health:
+    redis:
+      enabled: false #不监控redis，监控状态下总是显示down的状态
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有节点
+    health:
+      sensitive: false #关闭过滤敏感信息
+  endpoint:
+    health:
+      show-details: ALWAYS  #显示详细信息
+
