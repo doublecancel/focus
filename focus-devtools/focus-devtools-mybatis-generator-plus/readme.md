@@ -1,0 +1,9 @@
+# 拓展了mybatis-generator的插件
+# 集合了功能有：
+- lombok
+- selectOneByExample
+- 集成通用Mapper
+- 实体类实现枚举定义字段
+- 实现逻辑删除逻辑
+- 实现批量插入逻辑
+- 实现分页

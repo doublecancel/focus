@@ -1,0 +1,2 @@
+# 自定义插件生成controller和service和domain和dto和vo，将会和mybatis-plus进行配合
+# 会在原来mybatis-plus的基础上进行maven插件化

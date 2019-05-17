@@ -1,4 +1,4 @@
-package com.focus.platform.uc;
+package com.focus.devtools.mybatis.plus.generator.program;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;

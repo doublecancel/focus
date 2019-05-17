@@ -16,6 +16,8 @@
     <modules>
         <module>focus-devtools-mybatis-generator-plus</module>
         <module>focus-devtools-generator-ui</module>
+        <module>focus-devtools-mybatis-plus-generator-program</module>
+        <module>focus-devtools-generator-maven-plugin</module>
     </modules>
 
 

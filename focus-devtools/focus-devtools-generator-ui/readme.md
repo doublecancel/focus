@@ -1,0 +1,2 @@
+# 以UI页面的方式生成controller和service和domain
+# 参考cola框架进行修改
