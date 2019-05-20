@@ -23,6 +23,7 @@
         <module>focus-framework-web</module>
         <module>focus-framework-mybatis</module>
         <module>focus-framework-feign-clients</module>
+        <module>focus-framework-rabbitmq-starter</module>
     </modules>
 
 

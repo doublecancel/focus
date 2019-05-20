@@ -1,5 +1,6 @@
 package com.focus.framework.swagger;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
@@ -47,6 +48,7 @@ public class SwaggerAutoConfiguration {
                 .globalOperationParameters(parameters())
                 .apiInfo(apiInfo())
                 .select()
+                .apis(t -> t.isAnnotatedWith(Api.class))
                 .paths(PathSelectors.any())
                 .build();
     }

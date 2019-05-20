@@ -3,11 +3,9 @@ package com.focus.platform.uc;
 import com.focus.framework.mybatis.config.EnableMybatisType;
 import com.focus.framework.mybatis.config.MybatisType;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.SpringCloudApplication;
 
-@SpringBootApplication
-@EnableDiscoveryClient
+@SpringCloudApplication
 @EnableMybatisType(MybatisType.PLUS)
 public class UcApplication  {
 

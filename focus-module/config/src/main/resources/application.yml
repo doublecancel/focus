@@ -24,13 +24,13 @@ eureka:
 management:
   health:
     redis:
-      enabled: false #不监控redis，监控状态下总是显示down的状态
+      enabled: false
   endpoints:
     web:
       exposure:
-        include: "*" #暴露所有节点
+        include: "*"
     health:
-      sensitive: false #关闭过滤敏感信息
+      sensitive: false
   endpoint:
     health:
-      show-details: ALWAYS  #显示详细信息
+      show-details: ALWAYS

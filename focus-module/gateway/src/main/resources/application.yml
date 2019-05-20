@@ -19,23 +19,30 @@ spring:
         locator:
           lower-case-service-id: true
       routes:
-      - id: system
-        uri: lb://system
+      - id: uc
+        uri: lb://uc
         predicates:
-        - Path= /system/**
+        - Path= /uc/**
+        filters:
+        - StripPrefix=1
+
+      - id: dict
+        uri: lb://dict
+        predicates:
+        - Path= /dict/**
         filters:
         - StripPrefix=1
 
 management:
   health:
     redis:
-      enabled: false #不监控redis，监控状态下总是显示down的状态
+      enabled: false
   endpoints:
     web:
       exposure:
-        include: "*" #暴露所有节点
+        include: "*"
     health:
-      sensitive: false #关闭过滤敏感信息
+      sensitive: false
   endpoint:
     health:
-      show-details: ALWAYS  #显示详细信息
+      show-details: ALWAYS

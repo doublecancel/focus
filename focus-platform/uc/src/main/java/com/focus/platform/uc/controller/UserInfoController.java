@@ -1,6 +1,7 @@
 package com.focus.platform.uc.controller;
 
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -16,5 +17,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 @RequestMapping("/uc/user-info")
 public class UserInfoController {
+
+
+
+    @GetMapping
+    public String test(){
+        return "test";
+    }
 
 }

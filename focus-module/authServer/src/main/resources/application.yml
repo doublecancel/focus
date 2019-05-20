@@ -1,0 +1,17 @@
+server:
+  port: 10006
+spring:
+  application:
+    name: auth
+  redis:
+    database: 0
+    host: cloud.db.com
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+    password: admin123
+    port: 6379
+    timeout: 3000

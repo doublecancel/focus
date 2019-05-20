@@ -3,10 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <artifactId>focus-platform</artifactId>
+        <groupId>focus</groupId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.focus.platform</groupId>
     <artifactId>uc</artifactId>
@@ -86,45 +85,9 @@
         </dependency>
 
         <dependency>
-            <groupId>focus</groupId>
-            <artifactId>focus-framework-utils</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>focus</groupId>
-            <artifactId>focus-framwork-swagger-starter</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>focus</groupId>
-            <artifactId>focus-framework-base</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>focus</groupId>
-            <artifactId>focus-framework-web</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <!--<version>5.0.3</version>-->
-        </dependency>
-
-
-        <dependency>
-            <groupId>focus</groupId>
-            <artifactId>focus-framework-mybatis</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>focus</groupId>
-            <artifactId>focus-framework-feign-clients</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
@@ -140,18 +103,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>5.0.3</version>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

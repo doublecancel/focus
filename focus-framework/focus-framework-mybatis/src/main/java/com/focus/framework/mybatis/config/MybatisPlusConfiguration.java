@@ -1,5 +1,6 @@
 package com.focus.framework.mybatis.config;
 
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
@@ -27,9 +28,16 @@ public class MybatisPlusConfiguration {
     @Bean(name = "sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
         MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
+        bean.setPlugins(new PaginationInterceptor[]{paginationInterceptor()});
         bean.setDataSource(dataSource);
         bean.setTypeHandlersPackage("com.focus.framework.mybatis.config.handlers");
         return bean.getObject();
+    }
+
+
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        return new PaginationInterceptor();
     }
 
     @Bean
