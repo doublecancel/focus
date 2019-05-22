@@ -8,6 +8,7 @@ import com.focus.framework.base.utils.AopTargetUtils;
 import com.focus.framework.common.bean.BeanMapper;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -21,6 +22,7 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
     @ClientAutowired
     private ServiceImpl service;
 
+    ResourceConditionParser parser = new ResourceConditionParser();
 
     @Override
     public BO selectInfoById(@PathVariable("id") ID id) {
@@ -54,8 +56,12 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
     }
 
     @Override
-    public Page selectPaging(Page page, QueryWrapper wrapper) {
-        Page data = (Page) service.page(page, wrapper);
+    public Page selectPaging(@PathVariable("page") Integer page, @PathVariable("pageSize") Integer pageSize, @RequestParam("wrapper") QueryWrapper wrapper) {
+        Page p = new Page();
+        p.setSearchCount(true);
+        p.setCurrent(page);
+        p.setSize(pageSize);
+        Page data = (Page) service.page(p, wrapper);
         return data;
     }
 

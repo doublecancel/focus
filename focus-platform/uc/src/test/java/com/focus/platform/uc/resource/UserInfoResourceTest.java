@@ -73,7 +73,7 @@ public class UserInfoResourceTest {
 //        wrapper.groupBy("status");
 //        wrapper.eq("nick_name", "abc");
 
-        userInfoClient.selectPaging(page, wrapper);
+        userInfoClient.selectPaging(2, 2, wrapper);
     }
 
     @Test

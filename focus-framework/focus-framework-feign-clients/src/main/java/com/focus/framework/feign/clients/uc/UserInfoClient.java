@@ -8,7 +8,7 @@ import com.focus.framework.feign.clients.annotations.UcClient;
 import static com.focus.entity.enums.common.constants.ResourcePathConstants.USER_INFO_PATH;
 
 @UcClient(path = UserInfoClient.path)
-public interface UserInfoClient extends IServiceClient<UserInfoDto, UserInfoBo, Long> {
+public interface UserInfoClient  extends IServiceClient<UserInfoDto, UserInfoBo, Long> {
     String path = USER_INFO_PATH;
 
 

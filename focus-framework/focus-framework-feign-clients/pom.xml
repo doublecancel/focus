@@ -11,12 +11,16 @@
 
     <artifactId>focus-framework-feign-clients</artifactId>
 
-    <dependencies>
+    <properties>
+        <feign-form.verison>3.0.3</feign-form.verison>
+    </properties>
 
+    <dependencies>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.1.1.RELEASE</version>
         </dependency>
 
         <dependency>

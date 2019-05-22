@@ -8,12 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConditionalOnClass(Feign.class)
 @EnableFeignClients(basePackages = "com.focus.framework.feign.clients")
-public class FeignAutoConfiguration {
-
-
-
-
-
+public class FocusFeignAutoConfiguration {
 
 
 }
