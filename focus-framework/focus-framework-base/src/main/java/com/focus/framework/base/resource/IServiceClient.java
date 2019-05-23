@@ -34,19 +34,19 @@ public interface IServiceClient<DTO, BO, ID extends Serializable> {
     BO selectOneByCondition(@RequestBody Map<String, Object> params);
 
     @PostMapping("selectOneByWapper")
-    BO selectOneByCondition(@RequestBody QueryWrapper wrapper);
+    BO selectOneByCondition(@RequestBody Object condition);
 
     @PostMapping("/saveOrUpdate")
     boolean saveOrUpdate(@RequestBody DTO dto);
 
     @PostMapping("/selectPaging/{page}/{pageSize}")
-    Page selectPaging(@PathVariable("page") Integer page, @PathVariable("pageSize") Integer pageSize, @RequestParam("wrapper") QueryWrapper wrapper);
+    Page selectPaging(@PathVariable("page") Integer page, @PathVariable("pageSize") Integer pageSize, @RequestParam("wrapper") Object condition);
 
     @PostMapping("/selectListByCondition")
     List<BO> selectListByCondition(@RequestBody Map<String, Object> params);
 
     @PostMapping("/selectListByWapper")
-    List<BO> selectListByWapper(@RequestBody QueryWrapper wrapper);
+    List<BO> selectListByWapper(@RequestBody Object condition);
 
     @DeleteMapping("/deleteById/{id}")
     boolean deleteById(@PathVariable("id") Long id);

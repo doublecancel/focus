@@ -1,8 +1,10 @@
 package com.focus.framework.base.resource;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.focus.framework.base.processors.ClientAutowired;
 import com.focus.framework.base.utils.AopTargetUtils;
 import com.focus.framework.common.bean.BeanMapper;
@@ -41,10 +43,12 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
     }
 
     @Override
-    public BO selectOneByCondition(@RequestBody QueryWrapper wrapper) {
-        Object one = service.getOne(wrapper);
-        Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
-        return BeanMapper.map(one, entityClass);
+    public BO selectOneByCondition(@RequestBody Object condition) {
+//        Wrapper wrapper = parser.parser(condition, wrapper1);
+//        Object one = (Object) service.list(wrapper);
+//        Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+//        return BeanMapper.map(one, entityClass);
+        return null;
     }
 
     @Override
@@ -56,11 +60,12 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
     }
 
     @Override
-    public Page selectPaging(@PathVariable("page") Integer page, @PathVariable("pageSize") Integer pageSize, @RequestParam("wrapper") QueryWrapper wrapper) {
+    public Page selectPaging(@PathVariable("page") Integer page, @PathVariable("pageSize") Integer pageSize, @RequestParam("wrapper") Object condition) {
         Page p = new Page();
         p.setSearchCount(true);
         p.setCurrent(page);
         p.setSize(pageSize);
+        Wrapper wrapper = parser.parser(condition, null);
         Page data = (Page) service.page(p, wrapper);
         return data;
     }
@@ -73,7 +78,8 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
     }
 
     @Override
-    public List<BO> selectListByWapper(@RequestBody QueryWrapper wrapper) {
+    public List<BO> selectListByWapper(@RequestBody Object condition) {
+        Wrapper wrapper = parser.parser(condition, null);
         List list = service.list(wrapper);
         Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
         return BeanMapper.mapToList(list, entityClass);

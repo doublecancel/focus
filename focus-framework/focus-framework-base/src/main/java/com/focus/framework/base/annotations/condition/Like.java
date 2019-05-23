@@ -1,5 +1,6 @@
 package com.focus.framework.base.annotations.condition;
 
+import com.baomidou.mybatisplus.enums.SqlLike;
 import com.focus.framework.base.annotations.condition.parser.LikeParser;
 import com.focus.framework.base.annotations.condition.parser.LikeType;
 
@@ -16,7 +17,7 @@ public @interface Like {
 
     String fieldName() default "";
 
-    LikeType type() default LikeType.BOTH;
+    SqlLike type() default SqlLike.DEFAULT;
 
     boolean reverse() default false;
 
