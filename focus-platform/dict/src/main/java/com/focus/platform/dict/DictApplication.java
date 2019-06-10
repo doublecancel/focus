@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableMybatisType(MybatisType.PLUS)
+@EnableMybatisType
 public class DictApplication {
 
     public static void main(String[] args) {

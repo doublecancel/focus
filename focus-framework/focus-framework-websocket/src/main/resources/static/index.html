@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<head>
+    <meta charset="UTF-8" />
+    <title>Spring Boot+WebSocket+广播式</title>
+</head>
+
+<body>
+<noscript><h2 style="color: #ff0000">貌似你的浏览器不支持websocket</h2></noscript>
+<div>
+    <div>
+        <button id="connect" onclick="connect();">连接</button>
+        <button id="disconnect" disabled="disabled" onclick="disconnect();">断开连接</button>
+    </div>
+    <div id="conversationDiv">
+        <label>通知的标题</label><input type="text" id="title" />
+    </div>
+
+    <div id="conversationDiv">
+        <label>通知的内容</label><input type="text" id="content" />
+    </div>
+
+    <button onclick="sendAll()" >发送给所有用户</button>
+    <button onclick="sendOne()" >发送给指定用户</button>
+
+    <p id="notifyAll">123</p>
+    <p id="user"></p>
+</div>
+<script src="https://cdn.bootcss.com/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var stompClient = null;
+    //此值有服务端传递给前端,实现方式没有要求
+    var userId = "1"
+
+    function setConnected(connected) {
+        document.getElementById('connect').disabled = connected;
+        document.getElementById('disconnect').disabled = !connected;
+        document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
+        $('#response').html();
+    }
+
+    function connect() {
+        console.log("OK");
+        var socket = new SockJS('http://localhost:9010/webSocket'); //1连接SockJS的endpoint是“endpointWisely”，与后台代码中注册的endpoint要一样。
+        stompClient = Stomp.over(socket);//2创建STOMP协议的webSocket客户端。
+        stompClient.connect({}, function(frame) {//3连接webSocket的服务端。
+            setConnected(true);
+            console.log('开始进行连接Connected: ' + frame);
+            //4通过stompClient.subscribe（）订阅服务器的目标是'/topic/getResponse'发送过来的地址，与@SendTo中的地址对应。
+            stompClient.subscribe('/topic/getResponse', function(respnose){
+                console.log("getResponse:" + respnose);
+            });
+            stompClient.subscribe('/topic/subscribe', function(respnose){
+                console.log("subscribe:" + respnose)
+            });
+            stompClient.subscribe('/topic/notifyAll', function(respnose){
+                console.log(123)
+                alert(1)
+                console.log("notifyAll:" + respnose)
+            });
+            //4通过stompClient.subscribe（）订阅服务器的目标是'/user/' + userId + '/msg'接收一对一的推送消息,其中userId由服务端传递过来,用于表示唯一的用户,通过此值将消息精确推送给一个用户
+            stompClient.subscribe('/user/' + userId + '/msg', function(respnose){
+                console.log(respnose);
+            });
+        });
+    }
+
+
+    function disconnect() {
+        console.log("abc");
+        if (stompClient != null) {
+            stompClient.disconnect();
+        }
+        setConnected(false);
+        console.log("Disconnected");
+    }
+
+    function sendAll() {
+        var title = $('#title').val();
+        var content = $('#content').val()
+        var data = {
+            "title": title,
+            "content": content
+        }
+        //通过stompClient.send（）向地址为"/welcome"的服务器地址发起请求，与@MessageMapping里的地址对应。因为我们配置了registry.setApplicationDestinationPrefixes(Constant.WEBSOCKETPATHPERFIX);所以需要增加前缀/ws-push/
+        stompClient.send("/ws-push/notifyAll",{}, JSON.stringify(data));
+    }
+
+    function sendOne() {
+        var title = $('#title').val();
+        var content = $('#content').val()
+        var data = {
+            "title": title,
+            "content": content
+        }
+        //通过stompClient.send（）向地址为"/welcome"的服务器地址发起请求，与@MessageMapping里的地址对应。因为我们配置了registry.setApplicationDestinationPrefixes(Constant.WEBSOCKETPATHPERFIX);所以需要增加前缀/ws-push/
+        stompClient.send("/ws-push/notifyOne",{user: '2'}, JSON.stringify(data));
+    }
+
+    function showResponse(message) {
+        var response = $("#response");
+        response.html(message);
+    }
+    function showResponse1(message) {
+        var response = $("#response1");
+        response.html(message);
+    }
+</script>
+</body>
+</html>

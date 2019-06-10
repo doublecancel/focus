@@ -24,6 +24,8 @@
         <module>focus-framework-mybatis</module>
         <module>focus-framework-feign-clients</module>
         <module>focus-framework-rabbitmq-starter</module>
+        <module>focus-framework-canal</module>
+        <module>focus-framework-websocket</module>
     </modules>
 
 

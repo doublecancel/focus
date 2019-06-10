@@ -1,0 +1,16 @@
+
+spring:
+  application:
+    name: canal
+
+server:
+  port: 9080
+
+canal:
+  server:
+    ip:
+    port:
+    destination:
+    filter:
+      - focus_uc.user_account
+      -
