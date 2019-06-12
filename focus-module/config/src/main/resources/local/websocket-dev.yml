@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    host: cloud.db.com
+    port: 5672
+    username: guest
+    password: guest
+    stomp: 61613
+focus:
+  swagger:
+    title: websocket
+    description: 推送中心
+    version: 1.0
+    contact: doublecancel@github.com

@@ -33,6 +33,13 @@ spring:
         filters:
         - StripPrefix=1
 
+      - id: websocket
+        uri: lb://websocket
+        predicates:
+        - Path= /websocket/**
+        filters:
+        - StripPrefix=1
+
 management:
   health:
     redis:

@@ -43,7 +43,7 @@
 
     function connect() {
         console.log("OK");
-        var socket = new SockJS('http://localhost:9010/webSocket'); //1连接SockJS的endpoint是“endpointWisely”，与后台代码中注册的endpoint要一样。
+        var socket = new SockJS('http://localhost:10005/websocket/webSocket'); //1连接SockJS的endpoint是“endpointWisely”，与后台代码中注册的endpoint要一样。
         stompClient = Stomp.over(socket);//2创建STOMP协议的webSocket客户端。
         stompClient.connect({}, function(frame) {//3连接webSocket的服务端。
             setConnected(true);

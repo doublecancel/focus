@@ -2,8 +2,10 @@ package com.focus.framework.websocket;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @AllArgsConstructor(staticName = "create")
+@Data
 public class Response {
 
 

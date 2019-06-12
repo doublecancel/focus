@@ -2,13 +2,16 @@ package com.focus.framework.websocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
+/**
+ * 同样可以在gateway进行使用，应该是对https的websocket无法支持
+ */
 @Configuration
 @EnableWebSocketMessageBroker
-public class WebsocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
+public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {

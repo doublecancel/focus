@@ -1,3 +1,6 @@
 server:
   port: 9010
-# websocket还有两点。1rabbitmq的atomp的borker配置2.使用异步的方式进行推送3.合并请求的方式进行批量推送
+
+spring:
+  profiles:
+    active: dev
