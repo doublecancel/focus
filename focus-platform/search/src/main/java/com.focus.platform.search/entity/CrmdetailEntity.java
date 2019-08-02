@@ -538,7 +538,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "CusNeeds", nullable = true, length = 255)
+    @Column(name = "Cusneeds", nullable = true, length = 255)
     public String getCusNeeds() {
         return cusNeeds;
     }
@@ -638,7 +638,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "IntentionAreaID", nullable = false)
+    @Column(name = "intentionareaid", nullable = false)
     public Integer getIntentionAreaId() {
         return intentionAreaId;
     }
@@ -648,7 +648,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "IntentionDID", nullable = false)
+    @Column(name = "intentiondid", nullable = false)
     public Integer getIntentionDid() {
         return intentionDid;
     }
@@ -658,7 +658,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "IntentionDname", nullable = true, length = 255)
+    @Column(name = "intentiondname", nullable = true, length = 255)
     public String getIntentionDname() {
         return intentionDname;
     }
@@ -668,7 +668,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "DisID", nullable = false)
+    @Column(name = "disid", nullable = false)
     public Integer getDisId() {
         return disId;
     }
@@ -678,7 +678,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "DisName", nullable = true, length = 255)
+    @Column(name = "disname", nullable = true, length = 255)
     public String getDisName() {
         return disName;
     }
@@ -688,7 +688,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "AreaId", nullable = false)
+    @Column(name = "areaid", nullable = false)
     public Integer getAreaId() {
         return areaId;
     }
@@ -698,7 +698,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "SignTime", nullable = true)
+    @Column(name = "signtime", nullable = true)
     public Timestamp getSignTime() {
         return signTime;
     }
@@ -708,7 +708,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "FollowTime", nullable = true)
+    @Column(name = "followtime", nullable = true)
     public Timestamp getFollowTime() {
         return followTime;
     }
@@ -748,7 +748,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "bcidStr", nullable = true, length = 255)
+    @Column(name = "bcidstr", nullable = true, length = 255)
     public String getBcidStr() {
         return bcidStr;
     }
@@ -798,7 +798,7 @@ public class CrmdetailEntity {
     }
 
     @Basic
-    @Column(name = "MobileLink", nullable = true, length = 255)
+    @Column(name = "Mobilelink", nullable = true, length = 255)
     public String getMobileLink() {
         return mobileLink;
     }

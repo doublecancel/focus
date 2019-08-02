@@ -24,4 +24,12 @@ public class CrmdetailEntityDaoServiceTest {
     public void count() {
         System.out.println(service.count());
     }
+
+
+
+    @Test
+    public void putToEs(){
+        service.putToEs(5666211);
+    }
+
 }
