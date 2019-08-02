@@ -13,6 +13,7 @@
     <file url="file://$PROJECT_DIR$/focus-entity/focus-entity-enum" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-canal" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-cloud-cofig-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-eureka-starter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-feign-clients" charset="UTF-8" />
@@ -21,9 +22,11 @@
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-transaction" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/focus-framework/focus-framework-websocket" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-framework/focus-framwork-swagger-starter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-module/admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/focus-module/admin/src/main/resources/application.yml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/focus-module/authServer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-module/config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-module/eureka" charset="UTF-8" />
@@ -32,6 +35,7 @@
     <file url="file://$PROJECT_DIR$/focus-platform" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-platform/common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-platform/dict" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/focus-platform/search" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-platform/uc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/focus-services" charset="UTF-8" />
   </component>

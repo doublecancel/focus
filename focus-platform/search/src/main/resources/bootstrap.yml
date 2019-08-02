@@ -1,0 +1,19 @@
+eureka:
+  client:
+    fetch-registry: true
+    registry-fetch-interval-second: 10
+    service-url:
+      defaultZone: http://admin:admin123@eureka:10000/eureka/
+  instance:
+    ip-address: cloud.test.com
+    prefer-ip-address: true
+spring:
+  application:
+    name: search
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: ConfigServer
+      label: master
+      profile: dev

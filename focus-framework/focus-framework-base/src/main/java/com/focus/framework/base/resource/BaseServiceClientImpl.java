@@ -1,10 +1,7 @@
 package com.focus.framework.base.resource;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.focus.framework.base.processors.ClientAutowired;
 import com.focus.framework.base.utils.AopTargetUtils;
 import com.focus.framework.common.bean.BeanMapper;
@@ -29,14 +26,14 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
     @Override
     public BO selectInfoById(@PathVariable("id") ID id) {
         Object byId = service.getById(id);
-        Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+        Class<BO> entityClass = (Class<BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
         return BeanMapper.map(byId, entityClass);
     }
 
     @Override
     public BO selectOneByCondition(@RequestBody Map<String, Object> params) {
         Collection collection = service.listByMap(params);
-        Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+        Class<BO> entityClass = (Class<BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
         if (collection.isEmpty()) return null;
         Object o = collection.stream().findFirst().get();
         return BeanMapper.map(o, entityClass);
@@ -54,7 +51,7 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
     @Override
     public boolean saveOrUpdate(@RequestBody DTO dto) {
 
-        Class entityClass = (Class) ((ParameterizedType)AopTargetUtils.getTarget(service).getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+        Class entityClass = (Class) ((ParameterizedType) AopTargetUtils.getTarget(service).getClass().getGenericSuperclass()).getActualTypeArguments()[1];
         Object map = BeanMapper.map(dto, entityClass);
         return service.saveOrUpdate(map);
     }
@@ -65,24 +62,25 @@ public abstract class BaseServiceClientImpl<DTO, BO, ID extends Serializable> im
         p.setSearchCount(true);
         p.setCurrent(page);
         p.setSize(pageSize);
-        Wrapper wrapper = parser.parser(condition, null);
-        Page data = (Page) service.page(p, wrapper);
-        return data;
+//        Wrapper wrapper = parser.parser(condition, null);
+//        Page data = (Page) service.page(p, wrapper);
+        return null;
     }
 
     @Override
     public List<BO> selectListByCondition(@RequestBody Map<String, Object> params) {
         Collection collection = service.listByMap(params);
-        Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+        Class<BO> entityClass = (Class<BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
         return BeanMapper.mapToList(collection, entityClass);
     }
 
     @Override
     public List<BO> selectListByWapper(@RequestBody Object condition) {
-        Wrapper wrapper = parser.parser(condition, null);
-        List list = service.list(wrapper);
-        Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
-        return BeanMapper.mapToList(list, entityClass);
+//        Wrapper wrapper = parser.parser(condition, null);
+//        List list = service.list(wrapper);
+//        Class <BO> entityClass = (Class <BO>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
+//        return BeanMapper.mapToList(list, entityClass);
+        return null;
     }
 
     @Override

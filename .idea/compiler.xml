@@ -6,40 +6,70 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="admin" />
         <module name="authServer" />
-        <module name="common" />
-        <module name="config" />
-        <module name="dict" />
-        <module name="eureka" />
-        <module name="focus-devtools-generator-maven-plugin" />
-        <module name="focus-devtools-generator-ui" />
-        <module name="focus-devtools-mybatis-generator-plus" />
-        <module name="focus-devtools-mybatis-plus-generator-program" />
-        <module name="focus-entity-annotation" />
-        <module name="focus-entity-beans" />
-        <module name="focus-entity-enum" />
-        <module name="focus-framework-base" />
         <module name="focus-framework-cloud-cofig-client" />
-        <module name="focus-framework-eureka-starter" />
-        <module name="focus-framework-feign-clients" />
-        <module name="focus-framework-mybatis" />
-        <module name="focus-framework-rabbitmq-starter" />
+        <module name="focus-devtools-generator-maven-plugin" />
+        <module name="config" />
+        <module name="search" />
+        <module name="focus-framework-websocket" />
         <module name="focus-framework-transaction" />
         <module name="focus-framework-utils" />
+        <module name="focus-framework-eureka-starter" />
+        <module name="focus-framework-base" />
+        <module name="dict" />
         <module name="focus-framework-web" />
-        <module name="focus-framwork-swagger-starter" />
-        <module name="focus-services" />
-        <module name="gateway" />
-        <module name="uc" />
+        <module name="focus-framework-canal" />
+        <module name="focus-entity-enum" />
+        <module name="focus-devtools-mybatis-generator-plus" />
+        <module name="admin" />
+        <module name="focus-framework-rabbitmq-starter" />
         <module name="zipkin" />
+        <module name="focus-framework-mybatis" />
+        <module name="common" />
+        <module name="eureka" />
+        <module name="focus-services" />
+        <module name="focus-framework-feign-clients" />
+        <module name="focus-framwork-swagger-starter" />
+        <module name="focus-entity-annotation" />
+        <module name="uc" />
+        <module name="focus-devtools-mybatis-plus-generator-program" />
+        <module name="gateway" />
+        <module name="focus-devtools-genrator-ui" />
+        <module name="focus-entity-beans" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="focus-framework-datasource-config" target="1.8" />
-      <module name="focus-framework-datasource-druid-config" target="1.8" />
-      <module name="focus-framework-mybatis-plus-config" target="1.8" />
-      <module name="focus-framewrork-mybtais-config" target="1.8" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin" options="-parameters" />
+      <module name="authServer" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="config" options="-parameters" />
+      <module name="dict" options="-parameters" />
+      <module name="eureka" options="-parameters" />
+      <module name="focus-devtools-generator-maven-plugin" options="-parameters" />
+      <module name="focus-devtools-genrator-ui" options="-parameters" />
+      <module name="focus-devtools-mybatis-plus-generator-program" options="-parameters" />
+      <module name="focus-entity-annotation" options="-parameters" />
+      <module name="focus-entity-beans" options="-parameters" />
+      <module name="focus-entity-enum" options="-parameters" />
+      <module name="focus-framework-base" options="-parameters" />
+      <module name="focus-framework-canal" options="-parameters" />
+      <module name="focus-framework-cloud-cofig-client" options="-parameters" />
+      <module name="focus-framework-eureka-starter" options="-parameters" />
+      <module name="focus-framework-feign-clients" options="-parameters" />
+      <module name="focus-framework-mybatis" options="-parameters" />
+      <module name="focus-framework-rabbitmq-starter" options="-parameters" />
+      <module name="focus-framework-transaction" options="-parameters" />
+      <module name="focus-framework-utils" options="-parameters" />
+      <module name="focus-framework-web" options="-parameters" />
+      <module name="focus-framework-websocket" options="-parameters" />
+      <module name="focus-framwork-swagger-starter" options="-parameters" />
+      <module name="focus-services" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="search" options="-parameters" />
+      <module name="uc" options="-parameters" />
+      <module name="zipkin" options="-parameters" />
+    </option>
   </component>
 </project>

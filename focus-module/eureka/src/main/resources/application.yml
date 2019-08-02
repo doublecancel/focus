@@ -31,13 +31,13 @@ eureka:
 management:
   health:
     redis:
-      enabled: false #²»¼à¿Øredis£¬¼à¿Ø×´Ì¬ÏÂ×ÜÊÇÏÔÊ¾downµÄ×´Ì¬
+      enabled: false #ï¿½ï¿½ï¿½ï¿½ï¿½redisï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾downï¿½ï¿½×´Ì¬
   endpoints:
     web:
       exposure:
-        include: "*" #±©Â¶ËùÓÐ½Úµã
+        include: "*" #ï¿½ï¿½Â¶ï¿½ï¿½ï¿½Ð½Úµï¿½
     health:
-      sensitive: false #¹Ø±Õ¹ýÂËÃô¸ÐÐÅÏ¢
+      sensitive: false #ï¿½Ø±Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
   endpoint:
     health:
-      show-details: ALWAYS  #ÏÔÊ¾ÏêÏ¸ÐÅÏ¢
+      show-details: ALWAYS  #ï¿½ï¿½Ê¾ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢

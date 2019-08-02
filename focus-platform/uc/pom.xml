@@ -19,7 +19,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>focus</groupId>
+            <artifactId>focus-framework-mybatis</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>focus</groupId>
             <artifactId>common</artifactId>
