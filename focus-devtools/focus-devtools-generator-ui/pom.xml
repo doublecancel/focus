@@ -12,7 +12,7 @@
     <artifactId>focus-devtools-genrator-ui</artifactId>
 
     <properties>
-        <commons.io.version>2.5</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <velocity.version>1.7</velocity.version>
         <mybatis-plus.version>2.1.9</mybatis-plus.version>
     </properties>
