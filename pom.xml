@@ -34,7 +34,7 @@
         <java.version>1.8</java.version>
         <lombok.version>1.18.4</lombok.version>
         <guava.version>23.0</guava.version>
-        <gson.version>2.8.5</gson.version>
+        <gson.version>2.8.9</gson.version>
         <orika.version>1.5.4</orika.version>
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
     </properties>
